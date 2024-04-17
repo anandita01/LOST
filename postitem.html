@@ -1,0 +1,254 @@
+<!--!DOCTYPE html>-->
+<html>
+<head>
+  <title>Post Lost or Found Item</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Patua+One&display=swap" rel="stylesheet">
+  <style>
+    .patua-one-regular {
+      font-family: "Patua One", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    body {
+      font-family: Boulder, sans-serif;
+      background-color: white;
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      height: 50vh;
+    }
+    .butt {
+        position: absolute;
+        bottom: 100px; /* Adjust the distance from the bottom */
+      font-weight: bold;
+      font-style: italic;
+        transform: translateX(12%);
+        display: flex;
+        border-radius: 25px;
+        width: 80%; /* Adjust the width of the container */
+    }
+    .navbar2 {
+      position: fixed;
+      top: 0;
+      left: 0px;
+      width: 100%;
+      height: 50px;
+      font-size: var(--font-size-xl);
+      color: var(--color-white);
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 1000;
+      overflow-x: hidden;
+    }
+    .navbar2 .right-links {
+      display: flex;
+      align-items: center;
+      margin-right: 28px;
+    }
+    .navbar2 > a {
+      text-decoration: none;
+      color: white;
+      padding-right: 50px; /* Adjust the padding to add space between links */
+    }
+    .navbar2 img {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      margin-left: 0px; /* Adjust the margin to add space between the last link and the image */
+    }
+    .navbar2 .right-links > a {
+      text-decoration: none;
+      color: white;
+      padding: 0 8px; /* Adjust the padding to add space between links */
+    }
+    .butt button {
+        font-family: Arial, sans-serif; /* Change the font family to Arial */
+        font-size: 14px; /* Optional: Change the font size */
+        background-color: #3498db; /* Change the background color to a blue shade */
+        color: white; /* Change the text color to white */
+      font-weight: bold;
+      font-style: italic;
+        padding: 8px 16px; /* Add padding to the button */
+        border: none; /* Remove the button border */
+        cursor: pointer; /* Change cursor to pointer on hover */
+        margin-right: 10px; /* Add spacing between buttons */
+    }
+    .butt button:last-child {
+        margin-right: 0; /* Remove margin from the last button */
+    }
+    .butt button:hover {
+        background-color: #2980b9; /* Change background color on hover */
+    }
+    .form-container {
+      background-color:#274e88;
+      color: #fff;
+    
+      margin-left: -65px;
+      margin-top: 120PX;
+      height: 380PX;
+
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      width: 380px;
+      max-width: 100%;
+    }
+
+    .form-container h2 {
+      font-family: "Patua One", serif;
+      max-width: 100%;
+      margin-top: 0;
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .form-container input:focus,
+    .form-container textarea:focus {
+        color: black;
+    }
+    .form-container label {
+      display: inline-block;
+      width: 100px;
+      margin-bottom: 20px;
+      margin-right: 5;
+      border radius: 25px;
+    }
+    .form-container input,
+    .form-container textarea {
+      border-radius: 12px;
+      width: calc(100% - 135px);
+      color: black;
+      padding: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .form-container input::placeholder,
+    .form-container textarea::placeholder {
+      font-style: italic;
+      color:black;
+    }
+    .form-container button {
+      background-color: white;
+      font-style: italic;
+      color: black;
+      border-radius: 12px;
+      border: 1px solid #3498db;
+      padding:5px 10px;
+      cursor: pointer;
+      float: left;
+      margin-right: 30px;
+    }
+ /* Increase the height of the description box */
+#description {
+    height: 60px; /* Adjust the height as needed */
+}
+/* Increase the height of the location box */
+#location {
+    height: 60px;
+    #location {
+    width: 400px; /* Increase the width as needed */
+}
+ /* Adjust the height as needed */
+}
+    .form-container button:last-child {
+      margin-right: 10;
+    }
+    .form-container button:hover {
+      background-color: #3498db;
+      color: #fff;
+    }
+    .custom-shape-divider-top-1712340606 {
+        position: absolute;
+        top: -1px; /* Adjust the top position to align the circle properly */
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        z-index: -1; /* Set a lower z-index to make it appear behind other elements */
+    }
+    .custom-shape-divider-top-1712340606 svg {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 450px; /* Adjust the height of the SVG circle as needed */
+      margin: 0; /* Remove any margin */
+      padding: 0; /* Remove any padding */
+    }
+    .custom-shape-divider-top-1712340606 .shape-fill {
+        fill: #87CEEB;
+    }
+    .custom-shape-divider-bottom-1712341742 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    .custom-shape-divider-bottom-1712341742 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 200px; /* Adjust the height as needed */
+    }
+    .custom-shape-divider-bottom-1712341742 .shape-fill {
+        fill: seagreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="custom-shape-divider-top-1712340606">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+      </svg>
+  </div>
+  <div class="navbar2">
+    <a href="index.html">HOME</a>
+    <div class="right-links">
+      <a href="lost.html">LOST</a>
+      <a href="found.html">FOUND</a>
+      <img class="user-1-icon2" alt="" src="img/profile.png" />
+    </div>
+  </div>
+  <div class="form-container">
+    <h2 style="background-color: white;">POST   ITEM</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+      <label for="name">Name:</label><input type="text" id="name" name="name" required
+        placeholder="Enter item name"><br>
+      <label for="description">Description:</label><input type="text" id="description" name="description" required
+        placeholder="Enter the details of the item"><br>
+       <!-- placeholder="Enter item name"><br>-->
+        <label for="location">Location:</label><input type="text" id="location" name="location" required
+          placeholder="Location where the item was lost/found"><br>
+      <label for="image">Attach Image:</label><input type="file" id="image" name="image"><br>
+      <div class="butt">
+      <button type="submit">SUBMIT</button>
+      <button type="button" class="close-btn">CLOSE </button>
+      </div>
+    </form>
+    <div id="notification" style="display: none;" class="notification">Item successfully posted!</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var form = document.querySelector('form');
+          form.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+            document.getElementById('notification').style.display = 'block';
+            form.reset();
+            setTimeout(function () {
+              document.getElementById('notification').style.display = 'none';
+            }, 5000); // 5000 milliseconds = 5 seconds
+          });
+        });
+      </script>
+</body>
+</html> 
