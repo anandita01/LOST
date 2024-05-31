@@ -15,7 +15,8 @@ Designed to simplify the process of locating lost items, the website offers a ha
 ### User-Friendly Interface
 The website features a simple and intuitive login/signup page, allowing university students to easily create accounts. Upon logging in, users can seamlessly navigate between sections dedicated to reporting lost items and searching for found items.
 
-##Glimpses of th project
+
+##Glimpses of the project:
 
 ![Screenshot of the login page](https://example.com/path/to/login_page.png)
 
