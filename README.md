@@ -18,6 +18,9 @@ The website features a simple and intuitive login/signup page, allowing universi
 
 ## Glimpses of the project:
 
+
+
+
 ![Screenshot of login page](https://github.com/anandita01/LOST/assets/101211623/67f118ce-8e82-4d2e-aced-2047ff67ea91)
 
 
