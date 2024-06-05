@@ -1,0 +1,22 @@
+lost and found website
+
+what user can do?
+1. user can sign up/login
+2. user can post about lost item
+3. user can post about found item
+4. user can see the list of lost items
+5. user can see the list of found items
+6. user can see their profile
+
+endp points:
+
+1. user
+   /signup:   post
+   / login:   post
+
+2. items
+  /lost:     get/post
+  /found:    get/post
+
+3. user profile
+   /profile:  get profile
