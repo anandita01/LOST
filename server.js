@@ -6,9 +6,12 @@ const path=require('path');
 const app=express();
 
 
+
 //conecting to view engine for server side rendering
 app.set("view engine","ejs");
 app.set("views",path.resolve("./views"))
+
+app.use('/components', express.static(path.join(__dirname, 'components')));
 
 //body parser
 app.use(express.json());
@@ -26,6 +29,13 @@ const foundItemRoutes=require('./routes/foundItemRoutes');
 app.use('/student',studentRoutes);
 app.use('/lost',lostItemRoutes);
 app.use('/found',foundItemRoutes);
+
+app.get('/postitem', (req, res) => {
+   return res.render('postitem')
+});
+app.use('/',async(req,res)=>{
+   return res.render("home")
+});
 
 
 const PORT=3002;

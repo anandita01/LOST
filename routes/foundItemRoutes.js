@@ -7,7 +7,7 @@ router.post('/',(req,res)=>{
 
 })
 router.get('/',(req,res)=>{
-    
+    res.render('found');
 })
 
 module.exports=router;
