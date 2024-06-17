@@ -45,20 +45,22 @@
       <i class="search-for-found">SEARCH FOR FOUND ITEMS</i>
       <img class="search-1-icon1" alt="" src="/components/img/search.png"/>
     </div>
+    <% allFoundItems.forEach(item =>{ %>
     <div class="posted-item">
       <div class="posted-item-child">
-      <img class="img20240216231751-1-icon" alt="" src="/components/img/wallet.jpeg" />
+      <img class="img20240216231751-1-icon" alt="" src="/components/<%=item.imgPath%>" />
       <div class="posted-item-item"></div>
       <div class="posted-item-inner"></div>
-      <div class="lost-at-the">Found at the CSE Lab</div>
+      <div class="lost-at-the"><%= item.name %><br><%= item.location%></div>
       <img class="user-2-icon1" alt="" src="/components/img/profile.png" />
 
-      <div class="riya">RIYA</div>
-      <i class="riyabtcse19igdtuwacin">riyabtcse19@igdtuw.ac.in</i>
+      <div class="riya"><%= item.postedby.name %></div>
+      <i class="riyabtcse19igdtuwacin"><%= item.postedby.email %></i>
       <img class="dm-1-icon" alt="" src="/components/img/arrow.png" />
       </div>
-      <i class="pm">18/01/24 3:00 pm</i>
+      <i class="pm"><%= moment(item.createdAt).format('YY/MM/DD h:mm a') %></i>
     </div>
+  <% }) %>
 
   </header>
   <script>

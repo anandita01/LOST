@@ -37,9 +37,9 @@
         <!-- Modal content -->
     <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <i>sneha@igdtuw.ac.in</i>
+            <i><%=user.email %></i>
           <br>
-            <button onclick="logout()">Logout</button>
+            <button onclick="window.location.href = '/'">logout</button>
         </div>
     </div> 
     <!--sidebar-->
@@ -57,22 +57,25 @@
       <i class="search-for-lost">SEARCH FOR LOST ITEMS</i>
       <img class="search-1-icon1" alt="" src="/components/img/search.png" />
     </div>
+
+    <% allLostItems.forEach(item=>{%>
     <div class="posted-item">
       <div class="posted-item-child">
-        <img class="img20240216231751-1-icon" alt="" src="/components/img/boat.png" />
+        <img class="img20240216231751-1-icon" alt="" src="/components<%= item.imgPath%>" />
         <div class="posted-item-item"></div>
 
-        <div class="lost-at-the">Boat Earpods<br>Lost at the CSE department</div>
+        <div class="lost-at-the"><%= item.name %><br><%= item.location%></div>
         <!-- <div class="lost-at-the">Lost at the CSE department</div> -->
         <img class="user-2-icon1" alt="" src="/components/img/profile.png" />
 
-        <div class="sneha">Sneha</div>
-        <i class="snehabtcse21igdtuwacin">snehabtcse21@igdtuw.ac.in</i>
+        <div class="sneha"><%= item.postedby.name %></div>
+        <i class="snehabtcse21igdtuwacin"><%= item.postedby.email %></i>
         <img class="dm-1-icon" alt="" src="/components/img/chat.png" onclick="redirectChatPage();"/>
       </div>
-      <i class="pm">17/01/24 5:00 pm</i>
+      <i class="pm"><%= moment(item.createdAt).format('YY/MM/DD h:mm a') %></i>
     </div>
-
+  <% })  %>
+  
   </header>
   <script>
     function redirectToPostItemPage() {

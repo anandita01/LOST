@@ -222,33 +222,35 @@
   </div>
   <div class="form-container">
     <h2 style="background-color: white;">POST   ITEM</h2>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form id="itemForm" method="post" enctype="multipart/form-data">
       <label for="name">Name:</label><input type="text" id="name" name="name" required
         placeholder="Enter item name"><br>
+      <label for="option">Option:</label><select name="option">
+        <option value="lost">Lost</option>
+        <option value="found">Found</option>
+      </select><br>
       <label for="description">Description:</label><input type="text" id="description" name="description" required
         placeholder="Enter the details of the item"><br>
        <!-- placeholder="Enter item name"><br>-->
         <label for="location">Location:</label><input type="text" id="location" name="location" required
           placeholder="Location where the item was lost/found"><br>
-      <label for="image">Attach Image:</label><input type="file" id="image" name="image"><br>
+      <label for="image">Attach Image:</label><input type="file" id="image" name="itemimage"><br>
       <div class="butt">
       <button type="submit">SUBMIT</button>
       <button type="button" class="close-btn">CLOSE </button>
       </div>
     </form>
-    <div id="notification" style="display: none;" class="notification">Item successfully posted!</div>
+    <!--<div id="notification" style="display: none;" class="notification">Item successfully posted!</div>-->
+    </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          var form = document.querySelector('form');
-          form.addEventListener('submit', function (event) {
-            event.preventDefault(); 
-            document.getElementById('notification').style.display = 'block';
-            form.reset();
-            setTimeout(function () {
-              document.getElementById('notification').style.display = 'none';
-            }, 5000); // 5000 milliseconds = 5 seconds
-          });
-        });
-      </script>
+     document.querySelector('select[name="option"]').addEventListener('change', function() {
+    var form = document.getElementById('itemForm');
+    if (this.value === 'lost') {
+        form.action = '/lost';
+    } else if (this.value === 'found') {
+        form.action = '/found';
+    }
+});
+   </script>
 </body>
 </html> 

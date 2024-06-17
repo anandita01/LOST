@@ -6,7 +6,7 @@ const lostItemSchema=new mongoose.Schema({
         type: String,
         required: true
     },
-    type:{
+    option:{
         type:String,
         enum:['lost'],
         required:true
@@ -14,7 +14,6 @@ const lostItemSchema=new mongoose.Schema({
     description:{
         type:String,
         required:true,
-        unique:true
     },
     location:{
         type: String,
@@ -22,8 +21,12 @@ const lostItemSchema=new mongoose.Schema({
     },
     imgPath:{
         type:String
+    },
+    postedby:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Student"
     }
-})
+},{timestamps: true});
 
 //creating item  model
 const lostItem=mongoose.model('lostItem',lostItemSchema);
